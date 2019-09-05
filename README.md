@@ -11,9 +11,9 @@ Pre-requisites is DigitalOcean account (you may use my referal link https://m.do
 Variables
 --------------
 
-Default droplet size is s-1vcpu-1gb, default DigitalOcean region is ams3 and default image is ubuntu-18-04-x64. This is defined in playbook/do_create_droplet/defaults/main.yml  
+Default droplet size is `s-1vcpu-1gb`, default DigitalOcean region is `ams3` and default image is `ubuntu-18-04-x64`. This is defined in playbook/do_create_droplet/defaults/main.yml  
 
-You may override this defaults by extravar, for example:
+You may override this defaults by extravars, for example:
 
  `ansible-playbook digitalocean.yml -e "droplet_size=s-6vcpu-16gb droplet_region=sfo2 droplet_image=centos-7-x64 droplet_hostname=mybloghost"`
 
@@ -31,6 +31,4 @@ You should provide DigitalOcean API token with write permission to be able to us
 
  `ansible-playbook digitalocean.yml -e "do_api=c010187272c8a7b5bff5bfr5bdrced563bfrlbc4846539bdrv0985ca2b847cbda droplet_hostname=mytestproplet"`
 
-This is not valid key, you should use your own key instead! 
-
-
+*This is not valid key, you should use your own key instead! 
