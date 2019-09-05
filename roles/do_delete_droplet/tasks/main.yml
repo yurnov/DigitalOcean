@@ -1,0 +1,9 @@
+---
+# tasks file for do_delete_droplet
+
+- name: remove a droplet
+  digital_ocean_droplet:
+    state: absent
+    oauth_token: "{{ do_api }}"
+    id: "{{ my_droplet.data.droplet.id }}"
+    wait_timeout: 500

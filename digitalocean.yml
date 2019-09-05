@@ -1,0 +1,18 @@
+---
+- name: Create droplet and establish communication
+  hosts: localhost ansible_connection=local
+  roles:
+    - do_create_droplet    
+
+- hosts: do
+  remote_user: root
+  tasks:  
+    - shell: /bin/hostname
+      register: dropletstdout
+    - debug: 
+        msg: "This is test from provisioned droplet {{dropletstdout.stdout}}"
+
+- name: remove droplet
+  hosts: localhost
+  roles:  
+    - do_delete_droplet
